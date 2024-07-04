@@ -6,14 +6,14 @@ import Button from '../button';
 interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
-    onsSubmit: () => void;
+    onSubmit: () => void;
     title?: string;
     body?: string;
     footer?: string;
     actionLabel: string;
     disabled?: boolean;
     secondaryAction?: () => void;
-    secondaryLabel?: string;
+    secondaryActionLabel?: string;
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -26,7 +26,7 @@ const Modal: React.FC<ModalProps> = ({
     actionLabel,
     disabled,
     secondaryAction,
-    secondaryLabel
+    secondaryActionLabel
 
 }) => {
     const [showModal, setShowModal] = useState(isOpen);
@@ -45,7 +45,7 @@ const Modal: React.FC<ModalProps> = ({
             onClose();
         }, 300); }, [disabled, onClose]);
 
-    const handleCSubmit = useCallback(() => {
+    const handleSubmit = useCallback(() => {
         if (disabled) {
             return;
         }
@@ -91,9 +91,20 @@ const Modal: React.FC<ModalProps> = ({
                         {/*footer*/}
                         <div className="flex flex-col gap-2 p-6">
                             <div className="flex flex-row items-center gap-4 w-full">
-                                <Button label="my button" />
+                                {secondaryAction && secondaryActionLabel && 
+                                (<Button
+                                outline 
+                                disabled={disabled}
+                                label={secondaryActionLabel}
+                                onClick={handleSecondaryAction}
+                                />            
+                                )}                    
+                                <Button 
+                                disabled={disabled}
+                                label={actionLabel}
+                                onClick={handleSubmit}
+                                />
                             </div>
-                    
                         </div>
                     </div>
                 </div>
