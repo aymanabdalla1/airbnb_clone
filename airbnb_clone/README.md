@@ -51,7 +51,7 @@ I will split up the tutorial and have the game plan ready with the following sch
 - TOTAL TIME: 9hrs
 
 ### CHECK LIST
-- 1hr mark 
+- 1hr mark -> DONE
 - 2hr mark 
 - 3hr mark 
 - 4hr mark
