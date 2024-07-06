@@ -23,7 +23,7 @@ export default function RootLayout({
         <ClientOnly>
           <ToasterProvider/>
           <RegisterModal/> 
-          <Navbar/>
+          <Navbar/>*-
         </ClientOnly>
         {children}
         </body>
