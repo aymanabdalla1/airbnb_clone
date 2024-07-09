@@ -6,7 +6,7 @@ User,
 > 
 & 
 { 
-    creadtedAt: string;
+    createdAt: string;
     updatedAt: string;
     emailVerified: string | null;
 }
