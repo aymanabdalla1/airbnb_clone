@@ -10,7 +10,7 @@ import prisma from "@/app/libs/prismadb";
 export const authOptions: AuthOptions = {
     adapter: PrismaAdapter(prisma),
     providers:[
-        GithubProvider ({
+            GithubProvider ({
             clientId: process.env.GITHUB_ID as string,
             clientSecret: process.env.GITHUB_SECRET as string,
             allowDangerousEmailAccountLinking: true
@@ -34,7 +34,7 @@ export const authOptions: AuthOptions = {
                         where: {
                             email: credentials.email }
                     });
-                    if (!user || !user ?.hashedPassword) {
+                    if (!user || !user?.hashedPassword) {
                         throw new Error('Invalid credentials');
                     }
                     const isCorrectPassword = await bcrypt.compare(
@@ -51,7 +51,7 @@ export const authOptions: AuthOptions = {
             }),
     ],
     pages: {
-        signIn: '/',
+        signIn: "/",
     },
     debug: process.env.NODE_ENV === 'development',
     session: {
