@@ -1,3 +1,5 @@
+'use client';
+
 import { GiBoatFishing, GiCactus, GiCastle, GiCaveEntrance, GiForestCamp, GiIsland, GiWindmill, GiBarn} from "react-icons/gi";
 import Container from "../container";
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb"

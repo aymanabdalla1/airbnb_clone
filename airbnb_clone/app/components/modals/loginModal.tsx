@@ -17,7 +17,7 @@ import Modal from './modal';
 
 
 const LoginModal = () => {
-  const router = useRouter();
+    const router = useRouter();
     const registarModal = useRegisterModal();
     const loginModal = useLoginModal();
     const [isLoading, setIsLoading] = useState(false);
@@ -50,6 +50,12 @@ const LoginModal = () => {
           }
         })
     }
+
+    const toggle = useCallback(() => {
+      loginModal.onClose();
+      registarModal.onOpen();
+      [loginModal, registarModal]
+    }, []);
 
     const bodyContent = (
         <div className="flex flex-col gap-4">
@@ -93,12 +99,12 @@ const LoginModal = () => {
         />
         <div className="text-neutral-500 text-center mt-4 font-light">
           <div className="justify-center flex flex-row items-center gap-2">
-            Already have an account?
+            First time using Airbnb?
             <div
-              onClick={registarModal.onClose}
+              onClick={toggle}
               className="text-neutral-800 cursor-pointer hover:underline"
             >
-              Login
+              Create an account
             </div>
           </div>
         </div>
