@@ -54,7 +54,7 @@ I will split up the tutorial and have the game plan ready with the following sch
 - 1hr mark -> DONE
 - 2hr mark -> DONE 
 - 3hr mark -> DONE
-- 4hr mark
+- 4hr mark -> DONE
 - 5hr mark 
 - 6hr mark 
 - 7hr mark 
